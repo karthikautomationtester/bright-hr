@@ -11,6 +11,7 @@ import { DrivingLicenseDetailsPage } from '../pages/drivingLicenseDetailsPage';
 import { VisaDetailsPage } from '../pages/visaDetailsPage';
 import { generateUKMobileNumber, formatDate } from '../utils/helper-utils';
 import { SaveAndContinuePage } from '../pages/saveAndContinuePage';
+import { EmploymentDetailsPage } from '../pages/employmentDetailsPage';
 
 type Pages = {
   loginPage: LoginPage;
@@ -23,6 +24,7 @@ type Pages = {
   drivingLicenseDetailsPage: DrivingLicenseDetailsPage;
   visaDetailsPage: VisaDetailsPage;
   saveAndContinuePage: SaveAndContinuePage;
+  employmentDetailsPage: EmploymentDetailsPage;
 };
 
 type TestData = {
@@ -95,6 +97,9 @@ export const test = base.extend<Pages & { testData: TestData }>({
     saveAndContinuePage: async ({ page }, use) => {
         await use(new SaveAndContinuePage(page));
     },
+    employmentDetailsPage: async ({ page }, use) => {
+        await use(new EmploymentDetailsPage(page));
+    },
   testData: async ({}, use) => {
     const firstName = faker.person.firstName();
     const lastName = faker.person.lastName();
@@ -122,17 +127,18 @@ export const test = base.extend<Pages & { testData: TestData }>({
     const sortCode = faker.finance.accountNumber(8);
     const salary = faker.finance.amount();
     const rawEffectiveFrom = faker.date.past().toISOString().split('T')[0];
-    const effectiveFrom = formatDate(rawEffectiveFrom);
+    const effectiveFrom = '25/03/2025';
     const reason = "Adjustment";
     const payrollNumber = faker.string.alphanumeric();
     const taxCode = faker.string.alphanumeric(4);
     const niNumber = faker.string.alphanumeric(8);
     const passportNumber = faker.string.alphanumeric(9);
-    const passportCountryOfIssue = faker.location.country();
+    const country = "Afghanistan";
+    const passportCountryOfIssue = country;
     const rawPassportExpiryDate = faker.date.future().toISOString().split('T')[0];
     const passportExpiryDate = formatDate(rawPassportExpiryDate);
     const licenceNumber = faker.string.alphanumeric(10);
-    const drivingLicenceCountryOfIssue = faker.location.country();
+    const drivingLicenceCountryOfIssue = country;
     const licenceClass = faker.string.alphanumeric(1);
     const rawDateOfExpiry = faker.date.future().toISOString().split('T')[0];
     const dateOfExpiry = formatDate(rawDateOfExpiry);

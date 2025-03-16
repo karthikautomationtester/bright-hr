@@ -10,10 +10,7 @@ export class AddressPage {
       await this.page.getByRole('textbox', { name: 'Address 2' }).fill(address2);
       await this.page.getByRole('textbox', { name: 'Address 3' }).fill(address3);
       await this.page.getByRole('textbox', { name: 'Town/City' }).fill(townCity);
-      await this.page.evaluate(() => {
-        window.scrollBy(0, 1500);
-      });
-      await this.page.waitForSelector('#county', { state: 'visible' });
+        await this.page.waitForSelector('#county', { state: 'visible' });
       await this.page.locator('#county').click();
       await this.page.locator('#county').fill(county);
       await this.page.locator('#county').press('Tab');
