@@ -29,7 +29,7 @@ cd brighthr
 ## Running the Tests
 
 To run the tests, use the following command:
-- 'npx playwright test'
+- npx playwright test
 
 ## Project Structure
 - src/data/: Contains JSON files with test data.
