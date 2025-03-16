@@ -18,30 +18,30 @@ This project contains automated tests for the BrightHR application using Playwri
 
 ### Clone the Repository
 
-```bash
+bash
 git clone https://github.com/your-username/brighthr.git
 cd brighthr
 
-Install Dependencies
+## Install Dependencies
 
-npm install
+- npm install
 
-Running the Tests
+## Running the Tests
 
 To run the tests, use the following command:
-npx playwright test
+- 'npx playwright test'
 
-Project Structure
-src/data/: Contains JSON files with test data.
-src/fixtures/: Contains fixture files for setting up the test environment.
-src/pages/: Contains Page Object Model (POM) classes for different pages of the application.
-tests/: Contains test files
+## Project Structure
+- src/data/: Contains JSON files with test data.
+- src/fixtures/: Contains fixture files for setting up the test environment.
+- src/pages/: Contains Page Object Model (POM) classes for different pages of the application.
+- tests/: Contains test files
 
-Page Object Model (POM)
+## Page Object Model (POM)
 The POM Classes encapsulate the interactions with different pages of the application. Each class contains methods to perform actions on the respective page.
 
-Example Test
-import { test, expect } from '../src/fixtures/fixtures';
+## Example Test
+```import { test, expect } from '../src/fixtures/fixtures';
 import loginDetails from '../src/data/loginDetails.json' assert { type: 'json' };
 
 test('verify add employee test', async ({ page, loginPage, basicDetailsPage, addressPage, bankDetailsPage, salaryDetailsPage, taxDetailsPage, passportDetailsPage, drivingLicenseDetailsPage, visaDetailsPage, saveAndContinuePage, employmentDetailsPage, testData }) => {
