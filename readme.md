@@ -11,8 +11,8 @@ This project contains automated tests for the BrightHR application using Playwri
 
 ## Prerequisites
 
-- Node.js (>= 14.x)
-- npm (>= 6.x)
+- Node.js
+
 
 ## Getting Started
 

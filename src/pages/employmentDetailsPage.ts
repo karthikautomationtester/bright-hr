@@ -33,7 +33,6 @@ export class EmploymentDetailsPage {
     await this.page.getByTestId('annualLeaveEntitlement.hours').click();
     await this.page.getByTestId('annualLeaveEntitlement.hours').press('Tab');
     await this.page.getByTestId('annualLeaveEntitlement.minutes').press('Tab');
-    await this.page.getByTestId('annualLeaveAllowanceToolTip').press('Tab');
     await this.page.getByTestId('annualLeaveAllowance.hours').press('Tab');
     await this.page.getByTestId('annualLeaveAllowance.minutes').press('Tab');
   }
